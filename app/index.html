@@ -3,33 +3,48 @@
 <head>
 <meta charset="utf-8">
 <title></title>
+<script src="css/css.css"></script>
 </head>
 <body ng-cloak>
 	<h1></h1>
 	<div class="menu">
-		<form name="form" onsubmit="addUserInfo();">
-			Name:
-			<br>
-			<input id="userName" type="text" maxlength="30" required>
-			<br>
-			email:
-			<br>
-			<input id="email" type="text" maxlength="30" required>
-			<br>
-			contact telephone:
-			<br>
-			<input id="telephone" type="tel">
-			<br>
-			Your comment:
-			<br>
-			<textarea id="comment" rows="10" cols="30"></textarea>
-			<br>
-			<input type="submit">
+		<form name="form">
+			<label for="userName" class="block">
+				<div>Name:</div>
+				<div id="incorrectName" class="incorrectInput"></div>
+				<input id="userName" type="text" maxlength="30" required>
+			</label>
+			<label for="email" class="block">
+				<div>email:</div>
+				<div id="incorrectEmail" class="incorrectInput"></div>
+				<input id="email" type="text" maxlength="30" required>
+			</label>
+			<label for="telephone" class="block">
+				<div>contact telephone:</div>
+				<div id="incorrectTelephone" class="incorrectInput"></div>
+				<input id="telephone" type="tel">			
+			</label>
+			<label for="comment" class="block">
+				<div>Your comment:</div>
+				<div id="incorrectComment" class="incorrectInput"></div>
+				<textarea id="comment" rows="10" cols="30"></textarea>
+			</label>
+			<label class="block">
+				<div>
+					<button type="button" onclick="addUserInfo();">Botton</button>
+				</div>
+			</label>
 		</form>
-		<form name="timer" onsubmit="addTimerToCleanForm()">
-			Enter time to clean up form with registration:
-			<input id="timeForCleanUp" type="number">
-			<input type="submit">
+		<form name="timer">
+			<label for="timeForCleanUp" class="block">
+				<div>Enter time to clean up form with registration:</div>
+				<input id="timeForCleanUp" type="number">
+			</label>
+			<label class="block">
+				<div>
+					<button type="button" onclick="addTimerToCleanForm();">Botton</button>
+				</div>
+			</label>
 		</form>
 	</div>
 	<script src="js/js.js"></script>
