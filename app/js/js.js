@@ -18,7 +18,7 @@ function UserInfo(name, email, telephone, comment){
 	: this.email = email;
 
 	var regexpVerifyTelephoneNumber = /^\d/;
-	regexpVerifyTelephoneNumber.test(telephone) === true ? document.getElementById("incorrectTelephone").appendChild(spanNode.appendChild(document.createTextNode("Telephone number must contain only numbers"))) 
+	!regexpVerifyTelephoneNumber.test(telephone) === true ? document.getElementById("incorrectTelephone").appendChild(spanNode.appendChild(document.createTextNode("Telephone number must contain only numbers"))) 
 	: this.telephone = telephone; 
 
 	comment.length > 200 ? document.getElementById("incorrectComment").appendChild(spanNode.appendChild(document.createTextNode("Comment must not contain more than 200 symbols"))) 
@@ -31,7 +31,33 @@ function addUserInfo(){
 	var telephone = telephoneNode.value;
 	var comment = commentNode.value;
 	var userInfo = new UserInfo(name, email, telephone, comment);
-	alert(userInfo.name + " " + userInfo.email + " " + userInfo.telephone + " " + userInfo.comment)
+	showUserInfo(userInfo);
+}
+
+function showUserInfo(userInfo){
+	var userInfoNode = document.createElement("div");
+	var spanUserNameNode = document.createElement("span");
+	spanUserNameNode.setAttribute("class", "block");
+	var spanUserEmailNode = document.createElement("span");
+	spanUserEmailNode.setAttribute("class", "block");
+	var spanUserTelephoneNode = document.createElement("span");
+	spanUserTelephoneNode.setAttribute("class", "block");
+	var spanUserCommentNode = document.createElement("span");
+	spanUserCommentNode.setAttribute("class", "block");
+
+	spanUserNameNode.appendChild(document.createTextNode(userInfo.name));
+	userInfoNode.appendChild(spanUserNameNode);
+
+	spanUserEmailNode.appendChild(document.createTextNode(userInfo.email));
+	userInfoNode.appendChild(spanUserEmailNode);
+
+	spanUserTelephoneNode.appendChild(document.createTextNode(userInfo.telephone));
+	userInfoNode.appendChild(spanUserTelephoneNode);
+
+	spanUserCommentNode.appendChild(document.createTextNode(userInfo.comment));
+	userInfoNode.appendChild(spanUserCommentNode);
+
+	document.querySelector(".createdUserInfo").appendChild(userInfoNode);
 }
 
 function addTimerToCleanForm(){

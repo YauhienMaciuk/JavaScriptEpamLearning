@@ -3,50 +3,51 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-<script src="css/css.css"></script>
+<link rel="stylesheet" href="css/css.css">
 </head>
 <body ng-cloak>
 	<h1></h1>
 	<div class="menu">
 		<form name="form">
 			<label for="userName" class="block">
-				<div>Name:</div>
-				<div id="incorrectName" class="incorrectInput"></div>
+				<span class="block">Name:</span>
+				<span id="incorrectName" class="incorrectInput"></span>
 				<input id="userName" type="text" maxlength="30" required>
 			</label>
 			<label for="email" class="block">
-				<div>email:</div>
-				<div id="incorrectEmail" class="incorrectInput"></div>
+				<span class="block">email:</span>
+				<span id="incorrectEmail" class="incorrectInput"></span>
 				<input id="email" type="text" maxlength="30" required>
 			</label>
 			<label for="telephone" class="block">
-				<div>contact telephone:</div>
-				<div id="incorrectTelephone" class="incorrectInput"></div>
+				<span class="block">contact telephone:</span>
+				<span id="incorrectTelephone" class="incorrectInput"></span>
 				<input id="telephone" type="tel">			
 			</label>
 			<label for="comment" class="block">
-				<div>Your comment:</div>
-				<div id="incorrectComment" class="incorrectInput"></div>
+				<span class="block">Your comment:</span>
+				<span id="incorrectComment" class="incorrectInput"></span>
 				<textarea id="comment" rows="10" cols="30"></textarea>
 			</label>
 			<label class="block">
-				<div>
+				<span class="block">
 					<button type="button" onclick="addUserInfo();">Botton</button>
-				</div>
+				</span>
 			</label>
 		</form>
 		<form name="timer">
 			<label for="timeForCleanUp" class="block">
-				<div>Enter time to clean up form with registration:</div>
+				<span class="block">Enter time to clean up form with registration:</span>
 				<input id="timeForCleanUp" type="number">
 			</label>
 			<label class="block">
-				<div>
+				<span class="block">
 					<button type="button" onclick="addTimerToCleanForm();">Botton</button>
-				</div>
+				</span>
 			</label>
 		</form>
 	</div>
+	<div class="createdUserInfo"></div>
 	<script src="js/js.js"></script>
 </body>
 </html>

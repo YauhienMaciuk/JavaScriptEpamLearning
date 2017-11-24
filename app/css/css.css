@@ -1,9 +1,9 @@
 
-label.block {
+.block {
 	display: block;
 }
 
 .incorrectInput {
-	background: red;
-	color: red;
+	color: #FF0000;
+	display: block;
 }
